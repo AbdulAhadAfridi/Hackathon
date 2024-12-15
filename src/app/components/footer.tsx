@@ -18,22 +18,22 @@ export default function Footer() {
           <h3 className="text-[#D9D9D9] font-bold mb-10">Links</h3>
           <ul className="space-y-12 font-semibold">
             <li>
-              <a href="/" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <a href="" className="hover:underline md:text-[16px] xl:text-[18px]">
                 Home
               </a>
             </li>
             <li>
-              <a href="/Shop" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <a href="" className="hover:underline md:text-[16px] xl:text-[18px]">
                 Shop
               </a>
             </li>
             <li>
-              <a href="/About" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <a href="" className="hover:underline md:text-[16px] xl:text-[18px]">
                 About
               </a>
             </li>
             <li>
-              <a href="/Contact" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <a href="" className="hover:underline md:text-[16px] xl:text-[18px]">
                 Contact
               </a>
             </li>

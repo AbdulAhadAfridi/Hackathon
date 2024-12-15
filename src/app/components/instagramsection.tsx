@@ -1,12 +1,14 @@
 import React from "react";
-
+import Image from "next/image";
 const InstagramSection = () => {
   return (
     <section className="relative  max-w-screen-2xl mx-auto">
       {/* Background Image */}
-      <img
+      <Image
         src="/instbg.png" // Replace with your image path
         alt="Background"
+        width={0}
+        height={0}
         className="w-[1540px] h-[450px] object-cover"
       />
 

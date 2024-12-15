@@ -2,7 +2,7 @@ import React from "react";
 import { PiGreaterThanBold } from "react-icons/pi";
 import Header2 from "../components/header2";
 import Image from "next/image";
-import { AiFillDelete, AiOutlineDelete } from "react-icons/ai";
+import { AiFillDelete,} from "react-icons/ai";
 
 const Cart = () => {
   return (
@@ -10,7 +10,7 @@ const Cart = () => {
     <Header2 />
     <section className="relative max-w-screen-2xl mx-auto ">
   {/* Background Image */}
-  <img
+  <Image
     src="/shopimg1.png" // Replace with your image path
     alt="Background"
     width={1440}
@@ -22,9 +22,11 @@ const Cart = () => {
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center -translate-x-5">
     {/* Icon */}
     <div>
-      <img
+      <Image
         src="/logo.png" // Replace with your icon image path
         alt="Icon"
+        width={0}
+        height={0}
         className="w-16 h-16"
       />
     </div>

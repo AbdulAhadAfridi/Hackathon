@@ -10,7 +10,7 @@ const Home = () => {
     <Header2 />
     <section className="relative max-w-screen-2xl mx-auto ">
   {/* Background Image */}
-  <img
+  <Image
     src="/shopimg1.png" // Replace with your image path
     alt="Background"
     width={1440}
@@ -22,9 +22,11 @@ const Home = () => {
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center -translate-x-5">
     {/* Icon */}
     <div>
-      <img
+      <Image
         src="/logo.png" // Replace with your icon image path
         alt="Icon"
+        width={0}
+        height={0}
         className="w-16 h-16"
       />
     </div>
@@ -56,25 +58,31 @@ const Home = () => {
       <div className="mt-6">
         <div className="flex flex-wrap gap-10">
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo1.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Admin</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo2.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">14 Oct 2022</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo3.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Wood</p>
@@ -102,25 +110,31 @@ const Home = () => {
       <div className="mt-6">
         <div className="flex flex-wrap  gap-10">
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo1.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Admin</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo2.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">14 Oct 2022</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo3.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Handmade</p>
@@ -148,25 +162,31 @@ const Home = () => {
       <div className="mt-6">
         <div className="flex flex-wrap  gap-10">
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo1.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Admin</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo2.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">14 Oct 2022</p>
           </div>
           <div className="flex items-center">
-            <img
+            <Image
               src="/bloglogo3.png"
               alt="Icon"
+              width={0}
+              height={0}
               className="w-5 h-5"
             />
             <p className="text-[#9F9F9F] text-[16px] ml-2">Wood</p>
@@ -230,7 +250,8 @@ const Home = () => {
         <h3 className="font-semibold text-[28px] text-black">Recent Posts</h3>
         <ul className="mt-8 space-y-12">
           <li className="flex items-center">
-            <img src="/recentblog1.png" alt="Post thumbnail" className="w-16 h-16 rounded object-cover" />
+            <Image src="/recentblog1.png" alt="Post thumbnail" width={0}
+              height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Going all-in with millennial design</a>
               <p className="text-gray-500 text-xs">03 Aug 2022</p>
@@ -238,7 +259,8 @@ const Home = () => {
           </li>
          {/* Recent Posts 02 */}
           <li className="flex items-center">
-            <img src="/recentblog2.png" alt="Post thumbnail" className="w-16 h-16 rounded object-cover" />
+            <Image src="/recentblog2.png" alt="Post thumbnail" width={0}
+              height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm"> Exploring new ways of decorating </a>
               <p className="text-gray-500 text-xs">03 Aug 2022</p>
@@ -246,7 +268,8 @@ const Home = () => {
           </li>
           {/* Recent Posts 03 */}
           <li className="flex items-center">
-            <img src="/recentblog3.png" alt="Post thumbnail" className="w-16 h-16 rounded object-cover" />
+            <Image src="/recentblog3.png" alt="Post thumbnail" width={0}
+              height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Handmade pieces that took time to make</a>
               <p className="text-gray-500 text-xs">03 Aug 2022</p>
@@ -254,7 +277,8 @@ const Home = () => {
           </li>
           {/* Recent Posts 04 */}
           <li className="flex items-center">
-            <img src="/recentblog4.png" alt="Post thumbnail" className="w-16 h-16 rounded object-cover" />
+            <Image src="/recentblog4.png" alt="Post thumbnail"  width={0}
+              height={0}className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Modern home in Milan</a>
               <p className="text-gray-500 text-xs">03 Aug 2022</p>
@@ -262,7 +286,8 @@ const Home = () => {
           </li>
           {/* Recent Posts 05 */}
           <li className="flex items-center">
-            <img src="/recentblog5.png" alt="Post thumbnail" className="w-16 h-16 rounded object-cover" />
+            <Image src="/recentblog5.png" alt="Post thumbnail" width={0}
+              height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Colorful office redesign</a>
               <p className="text-gray-500 text-xs">03 Aug 2022</p>

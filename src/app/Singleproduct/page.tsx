@@ -1,11 +1,9 @@
-import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
-import { FaStar, FaFacebookF, FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
 import { HiMinus, HiPlus } from 'react-icons/hi';
 import Header2 from '../components/header2';
 import { PiGreaterThanBold } from 'react-icons/pi';
 import Image from 'next/image';
-import { SlSocialTwitter } from 'react-icons/sl';
 import
  { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 
