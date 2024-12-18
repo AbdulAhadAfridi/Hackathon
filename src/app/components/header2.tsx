@@ -10,114 +10,156 @@ import { Menu } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="bg-white w-full h-auto mx-auto max-w-screen-2xl">
-      <div className="flex  md:flex-row items-center justify-between px-4 sm:px-8 md:px-[50px] lg:px-[140px] py-4 lg:py-[33px]">
-        {/* Hamburger Menu */}
+    <header className="bg-white w-full mx-auto max-w-screen-2xl">
+      <div className="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 py-4 lg:py-6">
+        {/* Hamburger Menu for Small Screens */}
         <Sheet>
           <SheetTrigger className="lg:hidden">
-            <Menu />
+            <Menu className="text-black cursor-pointer" size={30} />
           </SheetTrigger>
-          <SheetContent className="bg-white text-black">
-            <SheetHeader className="text-3xl font-bold">
-              Abdul Ahad
-              <ul>
-                <li className="py-16 flex flex-col text-xl font-semibold mt-4 gap-y-8">
-                <Link href="/" className="hover:text-yellow-700">Home</Link>
-                  <Link href="/Shop" className="hover:text-yellow-700">Shop</Link>
-                  <Link href="/My-account" className="hover:text-yellow-700">My Account</Link>
-                  <Link href="/Checkout" className="hover:text-yellow-700">Checkout</Link>
-                  <Link href="/Cart" className="hover:text-yellow-700">Cart</Link>
-                  <Link href="/Blog" className="hover:text-yellow-700">Blog</Link>
-                  <Link href="/About" className="hover:text-yellow-700">About</Link>
-                  <Link href="/Contact" className="hover:text-yellow-700">Contact</Link>
-                  <Link href="/Singleproduct" className="hover:text-yellow-700">Single product </Link>
-
+          <SheetContent
+            className="bg-white text-black max-w-full h-full sm:max-w-xs sm:rounded-t-lg overflow-y-auto"
+          >
+            <SheetHeader>
+              <h2 className="text-2xl font-bold py-6  ml-[-140]">Menu</h2>
+              <ul className="space-y-4 text-lg font-medium pl-4 mt-4 gap-y-4 sm:mr-32 mr-0 text-left items-center">
+                <li>
+                  <Link href="/" className="hover:text-yellow-700">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Shop" className="hover:text-yellow-700">
+                    Shop
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/My-account" className="hover:text-yellow-700">
+                    My Account
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Checkout" className="hover:text-yellow-700">
+                    Checkout
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Cart" className="hover:text-yellow-700">
+                    Cart
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Blog" className="hover:text-yellow-700">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/About" className="hover:text-yellow-700">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Contact" className="hover:text-yellow-700">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/Singleproduct" className="hover:text-yellow-700">
+                    Single Product
+                  </Link>
                 </li>
               </ul>
             </SheetHeader>
           </SheetContent>
         </Sheet>
 
-        {/* Navigation Links */}
-        <nav className="hidden lg:flex space-x-8 xl:space-x-20 text-[18px] lg:text-[22px] font-semibold ml-36">
-          <Link href="/" className="hover:text-black">Home</Link>
-          <Link href="/Shop" className="hover:text-black">Shop</Link>
-          <Link href="/About" className="hover:text-black">About</Link>
-          <Link href="/Contact" className="hover:text-black">Contact</Link>
+
+        {/* Navigation Links for Larger Screens */}
+        <nav className="hidden lg:flex space-x-6 xl:space-x-10 text-base lg:text-lg font-semibold lg:ml-56">
+          <Link href="/" className="hover:text-black">
+            Home
+          </Link>
+          <Link href="/Shop" className="hover:text-black">
+            Shop
+          </Link>
+          <Link href="/About" className="hover:text-black">
+            About
+          </Link>
+          <Link href="/Contact" className="hover:text-black">
+            Contact
+          </Link>
         </nav>
 
-        {/* Icons */}
-        <div className="flex items-center gap-4 lg:gap-[30px] mt-4 lg:mt-0">
-          <div className="flex gap-2">
+        {/* Action Icons */}
+        <div className="flex items-center gap-4 lg:gap-6 mr-8">
+          <div className="flex items-center gap-2">
             <Link href="/My-account">
-              <FaRegUser size={25} className="cursor-pointer hover:text-black  " />
+              <FaRegUser size={24} className="cursor-pointer hover:text-black mr-[-16]" />
             </Link>
-            <AiOutlineExclamation size={25} className="cursor-pointer hover:text-black ml-[-16] " />
+            <AiOutlineExclamation size={24} className="cursor-pointer hover:text-black " />
           </div>
-          <GoSearch size={30} className="cursor-pointer hover:text-black" />
-          <IoIosHeartEmpty size={30} className="cursor-pointer hover:text-black" />
-          {/* Shopping Cart Icon with Sidebar */}
+          <GoSearch size={24} className="cursor-pointer hover:text-black" />
+          <IoIosHeartEmpty size={24} className="cursor-pointer hover:text-black" />
+
+          {/* Shopping Cart */}
           <Sheet>
             <SheetTrigger>
-              <AiOutlineShoppingCart size={30} className="cursor-pointer hover:text-black" />
+              <AiOutlineShoppingCart size={24} className="cursor-pointer hover:text-black" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-[417px] h-full bg-white">
+            <SheetContent side="right" className="w-full max-w-sm bg-white">
               <SheetHeader>
                 <div className="p-4 border-b border-gray-200">
-                  <h2 className="text-[24px] font-bold text-black">Shopping Cart</h2>
+                  <h2 className="text-lg font-bold text-black">Shopping Cart</h2>
                 </div>
               </SheetHeader>
 
               {/* Cart Items */}
               <div className="p-4">
-                <div className="flex items-center mb-4 mt-4">
-                  {/* Product Thumbnail */}
-                  <div className="w-16 h-16 bg-[#FBEBB5] rounded-[10px] flex items-center justify-center">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 bg-[#FBEBB5] rounded-lg flex items-center justify-center">
                     <Image
                       src="/sofa.png"
                       alt="Product Thumbnail"
-                      width={150}
-                      height={150}
-                      className="object-contain w-full h-full"
+                      width={64}
+                      height={64}
+                      className="object-contain"
                     />
                   </div>
-                  {/* Product Info */}
-                  <div className="ml-4 flex-1">
-                    <h3 className="text-gray-800 font-medium">Asgaard Sofa</h3>
-                    <p className="text-black text-sm">
+                  <div className="flex-1">
+                    <h3 className="text-sm font-medium text-gray-800">Asgaard Sofa</h3>
+                    <p className="text-xs text-black">
                       1 x <span className="text-[#B88E2F]">Rs. 250,000.00</span>
                     </p>
                   </div>
-                  {/* Remove Button */}
-                  <button className="text-white bg-[#9F9F9F] text-sm rounded-full w-6 h-6">X</button>
+                  <button className="w-6 h-6 bg-gray-400 text-white text-xs rounded-full">
+                    X
+                  </button>
                 </div>
-                <div className="border-t border-[#D9D9D9] mt-10"></div>
+                <div className="border-t border-gray-200 mt-4"></div>
               </div>
 
-              {/* Subtotal */}
-              <div className="p-4 mt-20 md:mt-80 mr-8">
-                <div className="flex justify-between">
-                  <span className="text-black font-medium">Subtotal</span>
+              {/* Subtotal Section */}
+              <div className="p-4">
+                <div className="flex justify-between text-sm font-medium">
+                  <span>Subtotal</span>
                   <span className="text-[#B88E2F] font-bold">Rs. 250,000.00</span>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="p-4 border-t border-[#D9D9D9] mt-8">
-                <div className="grid grid-cols-2 gap-4">
-                  <Link
-                    href="/Cart"
-                    className="border border-black rounded-full py-2 text-sm text-black text-center hover:bg-black hover:text-white"
-                  >
-                    View Cart
-                  </Link>
-                  <Link
-                    href="/Checkout"
-                    className="border border-black rounded-full py-2 text-sm text-black text-center hover:bg-black hover:text-white"
-                  >
-                    Checkout
-                  </Link>
-                </div>
+              <div className="p-4 grid grid-cols-2 gap-4">
+                <Link
+                  href="/Cart"
+                  className="py-2 text-center border border-black text-sm text-black rounded-full hover:bg-black hover:text-white"
+                >
+                  View Cart
+                </Link>
+                <Link
+                  href="/Checkout"
+                  className="py-2 text-center border border-black text-sm text-black rounded-full hover:bg-black hover:text-white"
+                >
+                  Checkout
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

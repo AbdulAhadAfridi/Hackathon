@@ -5,123 +5,120 @@ import { MdAccessTime } from "react-icons/md";
 
 const BlogSection = () => {
   return (
-    <section className="bg-white py-16 mx-auto max-w-screen-2xl ">
-      <div className="container mx-auto text-center max-w-screen-2xl">
-        {/* Heading */}
+    <section className="bg-white py-16 mx-auto max-w-screen-2xl">
+      <div className="text-center px-4">
         {/* Header */}
-       {/* Header */}
-       <h2 className="text-5xl font-semibold text-gray-800 mb-4 mt-2">Our Blogs</h2>
-        <p className="text-[#9F9F9F] mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 mb-4">
+          Our Blogs
+        </h2>
+        <p className="text-sm sm:text-base text-[#9F9F9F] mb-10">
           Find a bright idea to suit your taste with our great selection
         </p>
 
-     {/* Blog Cards */}
-     <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-8 mt-4">
-          {/* Blog Card 1 */} 
-          <div className="bg-white w-[393] h-[555] ml-40 md:ml-16">
+        {/* Blog Cards */}
+        <div className="grid gap-8 mt-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {/* Blog Card 1 */}
+          <div className="bg-white rounded-lg shadow-lg">
             <Image
               src="/blogsec1.png" // Replace with actual image paths
               alt="Blog 1"
-              width={1000}
-              height={200}
-              className="w-[393] h-[393] object-cover"
+              width={393}
+              height={393}
+              className="w-full h-auto object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-600 mb-2 mr-2">
+              <h3 className="text-sm sm:text-lg font-semibold text-gray-600 mb-2">
                 Going all-in with millennial design
               </h3>
               <a
                 href="#"
-                className="text-black text-[25px] font-semibold underline mr-8"
+                className="text-black text-base sm:text-lg md:text-[20px] font-semibold underline"
               >
                 Read More
               </a>
-              <div className="flex gap-8 mt-6 text-lg">
-                <span className="flex items-center ml-16 gap-2 text-gray-500">
-                  <MdAccessTime className="text-black size-[25px]" />5 min
+              <div className="flex flex-col sm:flex-row gap-4 mt-6 text-sm sm:text-base">
+                <span className="flex items-center gap-2 text-gray-500">
+                  <MdAccessTime className="text-black" /> 5 min
                 </span>
-                <span className="flex items-center gap-3 text-gray-500">
-                  <LuCalendarMinus2 className="text-black size-[25px]" />
-                  12th Oct 2022
+                <span className="flex items-center gap-2 text-gray-500">
+                  <LuCalendarMinus2 className="text-black" /> 12th Oct 2022
                 </span>
               </div>
             </div>
           </div>
 
           {/* Blog Card 2 */}
-          <div className="bg-white ml-40 md:ml-16">
+          <div className="bg-white rounded-lg shadow-lg">
             <Image
               src="/blogsec2.png"
               alt="Blog 2"
               width={393}
               height={393}
-              className="w-[393] h-[393] object-cover"
+              className="w-full h-auto object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-600 mb-2 md:mr-14 mr-44">
+              <h3 className="text-sm sm:text-lg font-semibold text-gray-600 mb-2">
                 Going all-in with millennial design
               </h3>
               <a
                 href="#"
-                className="text-black text-[25px] font-semibold underline md:mr-14 mr-44"
+                className="text-black text-base sm:text-lg md:text-[20px] font-semibold underline"
               >
                 Read More
               </a>
-              <div className="flex gap-8 mt-6 text-lg">
-                <span className="flex items-center ml-16 gap-2 text-gray-500">
-                  <MdAccessTime className="text-black size-[25px]" />5 min
+              <div className="flex flex-col sm:flex-row gap-4 mt-6 text-sm sm:text-base">
+                <span className="flex items-center gap-2 text-gray-500">
+                  <MdAccessTime className="text-black" /> 5 min
                 </span>
-                <span className="flex items-center gap-3 text-gray-500">
-                  <LuCalendarMinus2 className="text-black size-[25px]" />
-                  12th Oct 2022
+                <span className="flex items-center gap-2 text-gray-500">
+                  <LuCalendarMinus2 className="text-black" /> 12th Oct 2022
                 </span>
               </div>
             </div>
           </div>
 
           {/* Blog Card 3 */}
-          <div className="bg-white ml-40 md:ml-16">
+          <div className="bg-white rounded-lg shadow-lg">
             <Image
               src="/blogsec3.png"
               alt="Blog 3"
               width={393}
               height={393}
-              className="w-[393] h-[393] object-cover"
+              className="w-full h-auto object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-600 mb-2 md:mr-14 mr-44">
+              <h3 className="text-sm sm:text-lg font-semibold text-gray-600 mb-2">
                 Going all-in with millennial design
               </h3>
               <a
                 href="#"
-                className="text-black text-[25px] font-semibold underline md:mr-14 mr-44"
+                className="text-black text-base sm:text-lg md:text-[20px] font-semibold underline"
               >
                 Read More
               </a>
-              <div className="flex gap-8 mt-6 text-lg">
-                <span className="flex items-center ml-16 gap-2 text-gray-500">
-                  <MdAccessTime className="text-black size-[25px]" />5 min
+              <div className="flex flex-col sm:flex-row gap-4 mt-6 text-sm sm:text-base">
+                <span className="flex items-center gap-2 text-gray-500">
+                  <MdAccessTime className="text-black" /> 5 min
                 </span>
-                <span className="flex items-center gap-3 text-gray-500">
-                  <LuCalendarMinus2 className="text-black size-[25px]" />
-                  12th Oct 2022
+                <span className="flex items-center gap-2 text-gray-500">
+                  <LuCalendarMinus2 className="text-black" /> 12th Oct 2022
                 </span>
               </div>
             </div>
           </div>
-          </div>
-       
-        {/* Footer Link */}
-        <div className="mt-8  ">
-        <a href="/Blog  " className="text-black text-[20px] font-semibold underline  ">
-                View All Post
-              </a>
-        </div>
         </div>
 
+        {/* Footer Link */}
+        <div className="mt-8">
+          <a
+            href="/Blog"
+            className="text-black text-base sm:text-lg md:text-[20px] font-semibold underline"
+          >
+            View All Posts
+          </a>
+        </div>
+      </div>
     </section>
-     
- 
   );
 };
 

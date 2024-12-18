@@ -8,96 +8,97 @@ const Shop = () => {
   return (
     <>
     <Header2/>
-    
-
-    <section className="relative max-w-screen-2xl mx-auto ">
-  {/* Background Image */}
-  <Image
-    src="/shopimg1.png" // Replace with your image path
-    alt="Background"
-    width={1440}
-    height={316}
-    className="w-[1550px] h-[340px] "
-  />
-
-  {/* Slightly Left-Aligned Content */}
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center -translate-x-5">
-    {/* Icon */}
-    <div>
-        <Image
-        src="/logo.png" // Replace with your icon image path
-        alt="Icon"
-        width={0}
-        height={0}
-        className="w-16 h-16"
-      />
-    </div>
-
-    {/* Section Title */}
-    <h2 className=" sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black mb-6">Shop</h2>
-
-    {/* Breadcrumb */}
-    <p className="text-gray-600 text-sm flex items-center gap-x-2 mb-20">
-      <span className="text-black text-lg font-semibold">Home</span>
-      <PiGreaterThanBold className="text-black font-bold text-lg" />
-      <span className="text-lg">Shop</span>
-    </p>
-  </div>
-</section>
-
-
-   {/* Product Page */}
+   <section className="relative max-w-screen-2xl mx-auto">
+           {/* Background Image */}
+           <Image
+             src="/shopimg1.png" // Replace with your image path
+             alt="Background"
+             width={1440}
+             height={316}
+             className="w-full h-[340px] object-cover"
+           />
+   
+           {/* Slightly Left-Aligned Content */}
+           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+             {/* Icon */}
+             <div>
+               <Image
+                 src="/logo.png" // Replace with your icon image path
+                 alt="Icon"
+                 width={64}
+                 height={64}
+                 className="w-16 h-16"
+               />
+             </div>
+   
+             {/* Section Title */}
+             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-6">Shop</h2>
+   
+             {/* Breadcrumb */}
+             <p className="text-black text-sm flex items-center gap-x-2 mb-20">
+               <span className="text-black text-lg font-semibold">Home</span>
+               <PiGreaterThanBold className="text-black font-bold text-lg" />
+               <span className="text-lg">Shop</span>
+             </p>
+           </div>
+         </section>
+{/* Product Page */}
 <div className="flex flex-wrap justify-between items-center max-w-screen-2xl mx-auto bg-[#FAF4F4] px-4 py-4">
   {/* Left Section */}
-  <div className="flex flex-wrap items-center space-x-4  xl:ml-10">
+  <div className="flex flex-wrap items-center gap-4 xl:ml-10">
     <Image
       src="/log1.png"
       alt="Filter Icon"
-      className="w-10"
-      width={0}
-      height={0}
+      className="w-8 sm:w-10"
+      width={40}
+      height={40}
     />
-    <p className="text-black text-lg">
+    <p className="text-black text-xs sm:text-sm md:text-lg lg:text-lg">
       Filter
     </p>
-    <BsFillGridFill className="text-gray-600 text-2xl" />
+    <BsFillGridFill className="text-gray-600 text-xl sm:text-2xl" />
     <Image
       src="/log2.png"
       alt="Icon 2"
-      className="w-6"
-      width={0}
-      height={0}
+      className="w-5 sm:w-6"
+      width={24}
+      height={24}
     />
     <Image
       src="/log3.png"
       alt="Icon 3"
-      className=""
-      width={0}
-        height={0}
+      className="w-1 sm:w-1 h-6 sm:h-8"
+      width={24}
+      height={24}
     />
-    <p className="text-black text-lg">
+    <p className="text-black text-xs sm:text-sm md:text-lg lg:text-lg">
       Showing 1-16 of 32 results
     </p>
   </div>
 
   {/* Right Section */}
-  <div className="flex flex-wrap items-center space-x-12 mt-4 lg:mt-0 mr-10">
-    <div className="flex items-center space-x-6">
-      <p className="text-black text-lg">Show</p>
-      <button className="px-4 py-2 bg-white text-[#9F9F9F] text-lg  rounded-md">
+  <div className="flex flex-wrap items-center gap-6 mt-4 lg:mt-0 mr-4 sm:mr-10">
+    <div className="flex items-center gap-4">
+      <p className="text-black text-xs sm:text-sm md:text-lg lg:text-lg">
+        Show
+      </p>
+      <button className="px-3 sm:px-4 py-1 sm:py-2 bg-white text-[#9F9F9F] text-xs sm:text-sm md:text-lg lg:text-lg rounded-md">
         16
       </button>
     </div>
-    <div className="flex items-center space-x-6">
-      <p className="text-black text-lg">Sort by</p>
-      <button className="px-6 py-2 bg-white text-[#9F9F9F] text-lg  rounded-md">
+    <div className="flex items-center gap-4">
+      <p className="text-black text-xs sm:text-sm md:text-lg lg:text-lg">
+        Sort by
+      </p>
+      <button className="px-4 sm:px-6 py-1 sm:py-2 bg-white text-[#9F9F9F] text-xs sm:text-sm md:text-lg lg:text-lg rounded-md">
         Default
       </button>
     </div>
   </div>
 </div>
 
-            
+
+
 
 
 
@@ -339,17 +340,17 @@ const Shop = () => {
 
       {/* Features Section */}
       <div className="bg-[#FAF4F4] py-10  mx-auto max-w-screen-2xl w-[1550] h-[500] lg:h-[400] xl:h-[300] ">
-        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14 md:ml-48  lg:ml-4 xl:ml-40">
+        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14  ml-0 md:ml-48  lg:ml-4 xl:ml-40">
           {/* Feature 1 */}
           <div className="text-left  xl:ml-8">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0">Free Delivery</h3>
-            <p className=" text-[#9F9F9F] text-xl">  
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg">  
             For all oders over $50, consectetur adipim scing elit.            </p>
           </div>
           {/* Feature 2 */}
           <div className="text-left lg:ml-[-120px] xl:ml-4 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0 ">90 Days Return</h3>
-            <p className=" text-[#9F9F9F] text-xl">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg ">
               If goods have problems, consectetur adipiscing elit.
             </p>
           </div>
@@ -357,7 +358,7 @@ const Shop = () => {
           <div className="text-left  lg:mt-4 xl:mt-0 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold  sm:ml-28 lg:ml-0">Secure Payment</h3>
           
-            <p className=" text-[#9F9F9F] text-xl flex xl:flex-col ">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg flex xl:flex-col ">
               100% secure payment, consectetur
               <p className='ml-2 xl:ml-0'>adipiscing elit.</p>
             

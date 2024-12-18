@@ -4,7 +4,7 @@ export default function Footer() {
       {/* Footer Content */}
       <div className="max-w-7xl mx-auto py-20 grid grid-cols-1 md:grid-cols-4 gap-10 px-4 md:px-2 ml-10">
         {/* Address Section */}
-        <div className="mt-48 md:ml-6">
+        <div className="lg:mt-48 md:ml-6">
           <p className="text-[#9F9F9F] font-semibold leading-relaxed text-[16px]">
             400 University Drive Suite 200 Coral<br />
             Gables,<br />

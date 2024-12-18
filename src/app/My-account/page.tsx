@@ -7,40 +7,37 @@ const MyAccount = () => {
   return (
     <>
     <Header2 />
-    <section className="relative max-w-screen-2xl mx-auto ">
-  {/* Background Image */}
-  <Image
-    src="/shopimg1.png" // Replace with your image path
-    alt="Background"
-    width={1440}
-    height={316}
-    className="w-[1550px] h-[340px] "
-  />
+    <section className="relative max-w-screen-2xl mx-auto">
+        {/* Background Image */}
+        <Image
+          src="/shopimg1.png"
+          alt="Background"
+          width={1440}
+          height={316}
+          className="w-full h-[340px] object-cover"
+        />
 
-  {/* Slightly Left-Aligned Content */}
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center -translate-x-5">
-    {/* Icon */}
-    <div>
-      <Image
-        src="/logo.png" // Replace with your icon image path
-        alt="Icon"
-        width={0}
-        height={0}
-        className="w-16 h-16"
-      />
-    </div>
-
-    {/* Section Title */}
-    <h2 className=" sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black mb-6">My Account</h2>
-
-    {/* Breadcrumb */}
-    <p className="text-black text-sm flex items-center gap-x-2 mb-20">
-      <span className="text-black text-lg font-semibold">Home</span>
-      <PiGreaterThanBold className="text-black font-bold text-lg" />
-      <span className="text-lg">My account</span>
-    </p>
-  </div>
-</section>
+        {/* Centered Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <div>
+            <Image
+              src="/logo.png"
+              alt="Icon"
+              width={64}
+              height={64}
+              className="w-16 h-16"
+            />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-black mb-6">
+            My Account
+          </h2>
+          <p className="text-sm md:text-lg text-black flex items-center gap-x-2">
+            <span className="font-semibold">Home</span>
+            <PiGreaterThanBold className="text-black font-bold text-lg" />
+            <span>My account</span>
+          </p>
+        </div>
+      </section>
   {/* my Account */}
 <div className="max-w-screen-2xl mx-auto w-full h-auto px-4 py-16 flex flex-col lg:flex-row justify-between bg-white">
   {/* Login Section */}
@@ -122,15 +119,15 @@ const MyAccount = () => {
           className="mt-1 block border border-[#9F9F9F] w-full lg:w-[423px] h-[50px] md:h-[75px] rounded-[10px] shadow-md"
         />
       </div>
-      <p className="text-[14px] md:text-[18px] text-[#000000] w-[453px] h-[48px] mb-8">
+      <p className="text-[11px] md:text-[18px] text-[#000000] w-[453px] h-[48px] mb-8">
         A link to set a new password will be sent to your email address.
       </p>
-      <p className="text-[14px] md:text-[18px] text-[#000000] w-[453px] h-[96px] ">
+      <p className="text-[11px] md:text-[18px] text-[#000000] w-[380px] h-[96px] ">
         Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our{' '}
         <a href="#" className="text-black font-bold hover:underline">
           privacy policy
         </a>
-        .
+        
       </p>
       <div className="mt-16">
         <button
@@ -144,19 +141,19 @@ const MyAccount = () => {
   </div>
 </div>
 
-       {/* Features Section */}
+      {/* Features Section */}
       <div className="bg-[#FAF4F4] py-10  mx-auto max-w-screen-2xl w-[1550] h-[500] lg:h-[400] xl:h-[300] ">
-        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14 md:ml-48  lg:ml-4 xl:ml-40">
+        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14  ml-0 md:ml-48  lg:ml-4 xl:ml-40">
           {/* Feature 1 */}
           <div className="text-left  xl:ml-8">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0">Free Delivery</h3>
-            <p className=" text-[#9F9F9F] text-xl">  
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg">  
             For all oders over $50, consectetur adipim scing elit.            </p>
           </div>
           {/* Feature 2 */}
           <div className="text-left lg:ml-[-120px] xl:ml-4 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0 ">90 Days Return</h3>
-            <p className=" text-[#9F9F9F] text-xl">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg ">
               If goods have problems, consectetur adipiscing elit.
             </p>
           </div>
@@ -164,7 +161,7 @@ const MyAccount = () => {
           <div className="text-left  lg:mt-4 xl:mt-0 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold  sm:ml-28 lg:ml-0">Secure Payment</h3>
           
-            <p className=" text-[#9F9F9F] text-xl flex xl:flex-col ">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg flex xl:flex-col ">
               100% secure payment, consectetur
               <p className='ml-2 xl:ml-0'>adipiscing elit.</p>
             

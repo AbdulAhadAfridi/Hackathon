@@ -8,40 +8,40 @@ const Home = () => {
   return (
     <>
     <Header2 />
-    <section className="relative max-w-screen-2xl mx-auto ">
-  {/* Background Image */}
-  <Image
-    src="/shopimg1.png" // Replace with your image path
-    alt="Background"
-    width={1440}
-    height={316}
-    className="w-[1550px] h-[340px] "
-  />
-
-  {/* Slightly Left-Aligned Content */}
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center -translate-x-5">
-    {/* Icon */}
-    <div>
-      <Image
-        src="/logo.png" // Replace with your icon image path
-        alt="Icon"
-        width={0}
-        height={0}
-        className="w-16 h-16"
-      />
-    </div>
-
-    {/* Section Title */}
-    <h2 className=" sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black mb-6">Blog</h2>
-
-    {/* Breadcrumb */}
-    <p className="text-black text-sm flex items-center gap-x-2 mb-20">
-      <span className="text-black text-lg font-semibold">Home</span>
-      <PiGreaterThanBold className="text-black font-bold text-lg" />
-      <span className="text-lg">blog</span>
-    </p>
-  </div>
-</section>
+   <section className="relative max-w-screen-2xl mx-auto">
+           {/* Background Image */}
+           <Image
+             src="/shopimg1.png" // Replace with your image path
+             alt="Background"
+             width={1440}
+             height={316}
+             className="w-full h-[340px] object-cover"
+           />
+   
+           {/* Slightly Left-Aligned Content */}
+           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+             {/* Icon */}
+             <div>
+               <Image
+                 src="/logo.png" // Replace with your icon image path
+                 alt="Icon"
+                 width={64}
+                 height={64}
+                 className="w-16 h-16"
+               />
+             </div>
+   
+             {/* Section Title */}
+             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-6">Blog</h2>
+   
+             {/* Breadcrumb */}
+             <p className="text-black text-sm flex items-center gap-x-2 mb-20">
+               <span className="text-black text-lg font-semibold">Home</span>
+               <PiGreaterThanBold className="text-black font-bold text-lg" />
+               <span className="text-lg">blog</span>
+             </p>
+           </div>
+         </section>
 
 <div className="max-w-screen-2xl mx-auto bg-white p-4 sm:p-6 md:p-8 w-full h-auto">
   {/* Main Container */}
@@ -224,7 +224,7 @@ const Home = () => {
     {/* Sidebar */}
     <div className=" ml-16 rounded-[10px] flex flex-col gap-6 mt-6 ">
       {/* Search Bar */}
-      <div className="flex items-center border border-gray-400 px-4 py-2  w-[311px] h-[58] rounded-[10px]">
+      <div className="flex items-center border border-gray-400 px-4 py-2 ml-[-70] lg:ml-0 w-[300px] h-[58] rounded-[10px]">
         <input
           type="text"
           className="flex-grow outline-none text-sm"
@@ -250,7 +250,7 @@ const Home = () => {
         <h3 className="font-semibold text-[28px] text-black">Recent Posts</h3>
         <ul className="mt-8 space-y-12">
           <li className="flex items-center">
-            <Image src="/recentblog1.png" alt="Post thumbnail" width={0}
+            <Image src="/recentblog1.png" alt="Post thumbnail" width={100}
               height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Going all-in with millennial design</a>
@@ -259,7 +259,7 @@ const Home = () => {
           </li>
          {/* Recent Posts 02 */}
           <li className="flex items-center">
-            <Image src="/recentblog2.png" alt="Post thumbnail" width={0}
+            <Image src="/recentblog2.png" alt="Post thumbnail" width={100}
               height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm"> Exploring new ways of decorating </a>
@@ -268,7 +268,7 @@ const Home = () => {
           </li>
           {/* Recent Posts 03 */}
           <li className="flex items-center">
-            <Image src="/recentblog3.png" alt="Post thumbnail" width={0}
+            <Image src="/recentblog3.png" alt="Post thumbnail" width={100}
               height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Handmade pieces that took time to make</a>
@@ -277,7 +277,7 @@ const Home = () => {
           </li>
           {/* Recent Posts 04 */}
           <li className="flex items-center">
-            <Image src="/recentblog4.png" alt="Post thumbnail"  width={0}
+            <Image src="/recentblog4.png" alt="Post thumbnail"  width={100}
               height={0}className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Modern home in Milan</a>
@@ -286,7 +286,7 @@ const Home = () => {
           </li>
           {/* Recent Posts 05 */}
           <li className="flex items-center">
-            <Image src="/recentblog5.png" alt="Post thumbnail" width={0}
+            <Image src="/recentblog5.png" alt="Post thumbnail" width={100}
               height={0} className="w-16 h-16 rounded object-cover" />
             <div className="ml-4">
               <a href="#" className="text-black text-sm">Colorful office redesign</a>
@@ -302,19 +302,19 @@ const Home = () => {
 
 
 
-          {/* Features Section */}
-          <div className="bg-[#FAF4F4] py-10  mx-auto max-w-screen-2xl w-[1550] h-[500] lg:h-[400] xl:h-[300] ">
-        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14 md:ml-48  lg:ml-4 xl:ml-40">
+        {/* Features Section */}
+      <div className="bg-[#FAF4F4] py-10  mx-auto max-w-screen-2xl w-[1550] h-[500] lg:h-[400] xl:h-[300] ">
+        <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-6 px-4 mt-14  ml-0 md:ml-48  lg:ml-4 xl:ml-40">
           {/* Feature 1 */}
           <div className="text-left  xl:ml-8">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0">Free Delivery</h3>
-            <p className=" text-[#9F9F9F] text-xl">  
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg">  
             For all oders over $50, consectetur adipim scing elit.            </p>
           </div>
           {/* Feature 2 */}
           <div className="text-left lg:ml-[-120px] xl:ml-4 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold sm:ml-28 lg:ml-0 ">90 Days Return</h3>
-            <p className=" text-[#9F9F9F] text-xl">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg ">
               If goods have problems, consectetur adipiscing elit.
             </p>
           </div>
@@ -322,7 +322,7 @@ const Home = () => {
           <div className="text-left  lg:mt-4 xl:mt-0 ">
             <h3 className="text-yellow-500 xl:text-black text-[35px] font-semibold  sm:ml-28 lg:ml-0">Secure Payment</h3>
           
-            <p className=" text-[#9F9F9F] text-xl flex xl:flex-col ">
+            <p className=" text-[#9F9F9F] text-sm lg:text-lg flex xl:flex-col ">
               100% secure payment, consectetur
               <p className='ml-2 xl:ml-0'>adipiscing elit.</p>
             
