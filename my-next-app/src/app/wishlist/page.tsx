@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useWishlist } from "../../context/WishlistContext";
+import Image from "next/image";
 
 const WishlistPage = () => {
   const { wishlist, removeFromWishlist } = useWishlist();
@@ -14,7 +15,7 @@ const WishlistPage = () => {
       ) : (
         wishlist.map((item) => (
           <div key={item.id} style={{ border: "1px solid #ddd", padding: "10px", margin: "10px 0" }}>
-            <img src={item.imagePath} alt={item.name} style={{ width: "100px", height: "100px" }} />
+            <Image src={item.imagePath} alt={item.name} style={{ width: "100px", height: "100px" }} />
             <h2>{item.name}</h2>
             <p>Price: ${item.price}</p>
             <button onClick={() => removeFromWishlist(item.id)}>Remove</button>

@@ -1,6 +1,7 @@
+
+
 import React from "react";
 import { PiGreaterThanBold } from "react-icons/pi";
-import { BsFillGridFill } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 import Feature from "../components/feature";

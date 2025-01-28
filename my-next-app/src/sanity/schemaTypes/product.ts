@@ -57,6 +57,43 @@ export default {
         title: 'Category',
         type: 'string',
       },
+      {
+        name: "size",
+        type: "array",
+        title: "Size",
+        of: [{ type: "string" }],
+        options: {
+          list: ["S", "M", "L", "XL"], // Predefined sizes
+        },
+        validation: (Rule:import("@sanity/types").NumberRule) =>
+          Rule.required()
+            .min(1)
+            .max(4)
+            .error("Please select at least one size and at most all available sizes."),
+      },
+      {
+        name: "colors",
+        type: "array",
+        title: "Colors",
+        of: [{ type: "string" }],
+        options: {
+          list: [
+            { title: "Red", value: "red" },
+            { title: "Blue", value: "blue" },
+            { title: "Black", value: "black" },
+          ], // Predefined colors
+        },
+        validation: (Rule: import("@sanity/types").NumberRule) =>
+          Rule.required()
+            .min(1)
+            .error("At least one color must be selected."),
+      },
+      {
+        name: "discount",
+        type: "number",
+        title: "Discount",
+        
+      },
     ],
   };
   

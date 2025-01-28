@@ -82,7 +82,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -102,7 +101,7 @@ const formSchema = z.object({
 type FormType = z.infer<typeof formSchema>
 const contactForm = () => {
     const form = useForm<FormType>({
-        resolver: zodResolver(formSchema),
+        resolver:zodResolver(formSchema),
         defaultValues: {
           yourName: "",
         },

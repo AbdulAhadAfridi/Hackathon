@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react'
 import HeroSection from './components/hero'
 import TopPicksSection from './components/toppicsection'

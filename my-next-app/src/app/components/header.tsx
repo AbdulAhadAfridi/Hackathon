@@ -1,15 +1,18 @@
+"use client";
 import React from "react";
 import { AiOutlineExclamation, AiOutlineShoppingCart } from "react-icons/ai";
-import { GoSearch } from "react-icons/go";
 import { IoIosHeartEmpty } from "react-icons/io";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import { FaRegUser } from "react-icons/fa";
 import Image from "next/image";
-import { Menu, Sidebar } from "lucide-react";
+import { Menu } from "lucide-react";
 import SidebarWithSearch from "./SidebarWithSearch";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cart =  useSelector((state:any)=>state.cart)
+
   return (
     <header className="bg-white w-full mx-auto max-w-screen-2xl">
       <div className="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 py-4 lg:py-6">
@@ -88,7 +91,12 @@ const Header = () => {
           {/* Shopping Cart */}
           <Sheet>
             <SheetTrigger>
-              <AiOutlineShoppingCart size={24} className="cursor-pointer hover:text-black" />
+            <Link href={"/Cart"} className="relative hidden lg:block"><AiOutlineShoppingCart className="text-4xl  "/>
+             {cart.length > 0 && (
+                <span className="absolute top-[-5px] bg-red-400  rounded-full text-white w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">{cart.length}</span>
+             )
+             }
+            </Link>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-sm bg-white">
               <SheetHeader>

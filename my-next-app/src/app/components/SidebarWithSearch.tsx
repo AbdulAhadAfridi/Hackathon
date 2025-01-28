@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { GoSearch } from 'react-icons/go';
+import Image from 'next/image';
 
 const SearchBar = () => {
   const [isSearchBarOpen, setSearchBarOpen] = useState(false);
@@ -53,7 +54,7 @@ const SearchBar = () => {
             data.map((item, index) => (
               <div key={index} className="p-2 border-b last:border-b-0">
                 <div>{item.name}</div>
-                <img src={item.imagePath} alt={item.name} className="w-20 h-20 object-cover" />
+                <Image src={item.imagePath} alt={item.name} className="w-20 h-20 object-cover" />
                 <p>${item.price}</p>
               </div>
             ))
