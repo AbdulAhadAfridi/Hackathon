@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export default async function handler(
-  req: { method: string; body: { message: any } },
+  req: { method: string; body: { message: unknown } },
   res: {
     status: (arg0: number) => {
-      (): any;
-      new (): any;
-      json: { (arg0: { reply: any }): void; new (): any };
-      end: { (arg0: string): void; new (): any };
+      (): unknown;
+      new (): unknown;
+      json: { (arg0: { reply: unknown }): void; new (): unknown };
+      end: { (arg0: string): void; new (): unknown };
     };
     setHeader: (arg0: string, arg1: string[]) => void;
   }

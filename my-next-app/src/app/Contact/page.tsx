@@ -1,10 +1,11 @@
 import React from "react";
-import { PiGreaterThanBold } from "react-icons/pi";
 import { MdAccessTimeFilled, MdLocationOn } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import Image from "next/image";
 import Feature from "../components/feature";
 import ContactForm from "../components/contactForm";
+import { CgChevronRight } from "react-icons/cg";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -37,8 +38,13 @@ const Contact = () => {
 
           {/* Breadcrumb */}
           <p className="text-black text-sm flex items-center gap-x-2 mb-20">
-            <span className="text-black text-lg font-semibold">Home</span>
-            <PiGreaterThanBold className="text-black font-bold text-lg" />
+          <Link
+              href="/"
+              className="text-black text-lg font-semibold"
+            >
+              Home
+            </Link>
+            <CgChevronRight className="text-black font-bold text-lg" />
             <span className="text-lg">Contact</span>
           </p>
         </div>

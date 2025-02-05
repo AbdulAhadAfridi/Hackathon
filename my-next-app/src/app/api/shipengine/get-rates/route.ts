@@ -1,5 +1,6 @@
-import { shipengine } from "../../../helper/shipEngine"; // Import ShipEngine client
-import { Address, Package } from "@/types/type"; // Import custom types
+
+import { shipengine } from "@/lib/helper/shipEngine"; // Import ShipEngine client
+import { Address, Package } from "@/type"; // Import custom types
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {

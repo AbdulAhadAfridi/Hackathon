@@ -1,4 +1,5 @@
 export interface Product {
+    [x: string]: unknown;
     stockLevel: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
     price: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
     imagePath: string | StaticImport;
@@ -9,6 +10,6 @@ export interface Product {
     current : string;
     category: string;
     colors: string[];
-    sizes: string[];
+    size: string[];
   }
    

@@ -20,7 +20,7 @@ import {
 interface ChartData {
   name: string;
   value: number;
-  [key: string]: any; // For additional properties
+  [key: string]: unknown; // For additional properties
 }
 
 interface LineChartProps {

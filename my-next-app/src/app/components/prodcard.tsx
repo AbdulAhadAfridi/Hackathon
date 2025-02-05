@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = () => {
   return (
@@ -21,10 +22,14 @@ const ProductCard = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-left text-black mt-10 sm:mt-16">
             Side Table
           </h2>
+
           {/* View More Link */}
+          <Link href="/Shop" >
           <p className="text-black font-medium text-left underline mt-4">
             View More
           </p>
+          </Link>
+
         </div>
 
         {/* Card 2 */}
@@ -44,9 +49,11 @@ const ProductCard = () => {
             Side Table
           </h2>
           {/* View More Link */}
+          <Link href="/Shop" >
           <p className="text-black font-medium text-left underline mt-4">
             View More
           </p>
+          </Link>
         </div>
       </div>
     </section>

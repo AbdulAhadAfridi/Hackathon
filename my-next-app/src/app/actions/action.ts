@@ -37,3 +37,22 @@ export const updateCartQuantity = (productId : string, quantity : number) => {
 export const getCartItems = () : Product[] => {
     return JSON.parse(localStorage.getItem('cart') || '[]')
 }
+
+export const addToWishlist = (product: Product) => {
+    const wishlist: Product[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  
+    if (!wishlist.find((item) => item._id === product._id)) {
+      wishlist.push(product);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    }
+  };
+  
+  export const removeFromWishlist = (productId: string) => {
+    let wishlist: Product[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    wishlist = wishlist.filter((item) => item._id !== productId);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  };
+  
+  export const getWishlistItems = (): Product[] => {
+    return JSON.parse(localStorage.getItem("wishlist") || "[]");
+  };

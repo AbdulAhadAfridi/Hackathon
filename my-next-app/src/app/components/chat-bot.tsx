@@ -39,7 +39,7 @@ const Chatbot = () => {
             key={index}
             className={`mb-2 p-2 rounded-lg ${
               msg.user
-                ? "bg-blue-500 text-white ml-auto"
+                ? "bg-[#FBEBB5] "
                 : "bg-gray-300 text-black mr-auto"
             }`}
           >
@@ -57,7 +57,7 @@ const Chatbot = () => {
         />
         <button
           onClick={sendMessage}
-          className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600"
+          className="bg-black hover:bg-gray-800  text-white px-4 py-2 rounded-r-lg"
         >
           Send
         </button>

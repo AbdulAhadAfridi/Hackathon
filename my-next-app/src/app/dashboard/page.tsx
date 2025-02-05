@@ -20,9 +20,27 @@ async function getDashboardData() {
   }
   return res.json();
 }
+interface DashboardData {
+  totalRevenue: number;
+  subscriptions: {
+    total: number;
+    percentage: number;
+    data: Array<{ name: string; total: number }>;
+  };
+  cookieConsent: {
+    necessary: number;
+    functional: number;
+    analytics: number;
+  };
+  analytics: {
+    daily: Array<{ date: string; sales: number; visitors: number }>;
+    weekly: Array<{ date: string; sales: number; visitors: number }>;
+    monthly: Array<{ date: string; sales: number; visitors: number }>;
+  };
+}
 
 export default function DashboardPage() {
-  const [dashboardData, setDashboardData] = useState<any>(null);
+  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +58,11 @@ export default function DashboardPage() {
   }, []);
 
   if (loading) {
-    return <Skeleton className="h-[200px] w-full bg-gray-800" />;
+    return <Skeleton className="h-[200px] w-full" />;
+  }
+
+  if (!dashboardData) {
+    return <div>Error Loading Dashboard Data</div>;
   }
 
   return (

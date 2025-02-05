@@ -12,7 +12,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal, ChevronDown } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,11 +55,6 @@ export type Product = {
 interface ProductsTableProps {
   getProductsAction: () => Promise<Product[]>;
 }
-
-const getProductsAction = async () => {
-  const response = await fetch("/api/products");
-  return response.json();
-};
 
 export function ProductsTable({ getProductsAction }: ProductsTableProps) {
   const [data, setData] = useState<Product[]>([]);

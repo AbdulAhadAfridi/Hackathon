@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default function Footer() {
+
+  
   return (
     <section className="bg-white max-w-screen-2xl mx-auto">
       {/* Footer Content */}
@@ -25,17 +27,17 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/product" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <Link href="/Shop" className="hover:underline md:text-[16px] xl:text-[18px]">
                 Products
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <Link href="/Blogs" className="hover:underline md:text-[16px] xl:text-[18px]">
                Blog
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:underline md:text-[16px] xl:text-[18px]">
+              <Link href="/Contact" className="hover:underline md:text-[16px] xl:text-[18px]">
                 Contact
               </Link>
             </li>

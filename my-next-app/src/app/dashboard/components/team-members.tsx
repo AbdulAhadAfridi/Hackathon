@@ -14,20 +14,22 @@ import { ChevronDown, Plus } from "lucide-react";
 
 const teamMembers = [
   {
+    name: "Abdul Ahad",
+    email: "hafizabdulahadkhanafridi@gmail.com",
+    role: "Owner",
+  },
+  {
     name: "Talal Shoaib",
     email: "talalshoaib1991@gmail.com",
-    role: "Owner",
+    role: "Co-Owner",
   },
   {
     name: "Abdul Wahid",
     email: "awc4532350@gmail.com",
     role: "Co-Owner",
   },
-  {
-    name: "Abdul Ahad",
-    email: "hafizabdulahadkhanafridi@gmail.com",
-    role: "Co-Owner",
-  },
+ 
+
 ];
 
 export function TeamMembers() {

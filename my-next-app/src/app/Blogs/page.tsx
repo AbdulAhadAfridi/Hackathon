@@ -1,9 +1,10 @@
 import React from 'react';
-import { PiGreaterThanBold } from 'react-icons/pi';
 import Image from 'next/image';
 import { IoIosSearch } from 'react-icons/io';
 import Feature from '../components/feature';
 import { Pagination } from '@/components/ui/pagination';
+import { CgChevronRight } from 'react-icons/cg';
+import Link from 'next/link';
 
 const Blogs = () => {
   return (
@@ -36,8 +37,13 @@ const Blogs = () => {
    
              {/* Breadcrumb */}
              <p className="text-black text-sm flex items-center gap-x-2 mb-20">
-               <span className="text-black text-lg font-semibold">Home</span>
-               <PiGreaterThanBold className="text-black font-bold text-lg" />
+             <Link
+              href="/"
+              className="text-black text-lg font-semibold"
+            >
+              Home
+            </Link>
+            <CgChevronRight className="text-black font-bold text-lg" />
                <span className="text-lg">blog</span>
              </p>
            </div>

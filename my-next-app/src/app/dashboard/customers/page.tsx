@@ -81,7 +81,7 @@ export default function CustomersPage() {
       header: "Status",
       cell: ({ row }) => (
         <div
-          className={capitalize ${row.getValue("status") === "active" ? "text-green-600" : "text-red-600"}}
+          className={`capitalize ${row.getValue("status") === "active" ? "text-green-600" : "text-red-600"}`}
         >
           {row.getValue("status")}
         </div>

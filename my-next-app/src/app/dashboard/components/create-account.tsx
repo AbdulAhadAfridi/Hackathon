@@ -1,39 +1,57 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Github } from "lucide-react";
+import { useState } from "react"
+import { signIn } from "next-auth/react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Gift } from "lucide-react"
 
 export function CreateAccount() {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSignIn = async (provider: string) => {
+    setIsLoading(true)
+    try {
+      const result = await signIn(provider, { callbackUrl: "/dashboard", redirect: false })
+      if (result?.error) {
+        usetoast();
+      }
+    } catch (error) {
+      console.error(`Error signing in with ${provider}:`, error);
+      usetoast();
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="space-y-4">
       <div className="space-y-2">
         <div className="space-y-2">
-          <Button variant="outline" className="w-full">
-            <Github className="mr-2 h-4 w-4" />
-            Github
+          <Button variant="outline" className="w-full" onClick={() => handleSignIn("github")} disabled={isLoading}>
+            <Gift className="mr-2 h-4 w-4" />
+            Sign in with Github
           </Button>
-          <Button variant="outline" className="w-full">
-            <svg
-              className="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <Button variant="outline" className="w-full" onClick={() => handleSignIn("google")} disabled={isLoading}>
+            <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M12 0C5.37273 0 0 5.37273 0 12C0 18.6273 5.37273 24 12 24C18.6273 24 24 18.6273 24 12C24 5.37273 18.6273 0 12 0Z"
-                fill="#FFF"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4"
               />
               <path
-                d="M12 0.75C5.7868 0.75 0.75 5.7868 0.75 12C0.75 18.2132 5.7868 23.25 12 23.25C18.2132 23.25 23.25 18.2132 23.25 12C23.25 5.7868 18.2132 0.75 12 0.75ZM12 22.5C6.201 22.5 1.5 17.799 1.5 12C1.5 6.201 6.201 1.5 12 1.5C17.799 1.5 22.5 6.201 22.5 12C22.5 17.799 17.799 22.5 12 22.5Z"
-                fill="#EA4335"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853"
               />
               <path
-                d="M12 4.5C8.0145 4.5 4.5 8.0145 4.5 12C4.5 15.9855 8.0145 19.5 12 19.5C15.9855 19.5 19.5 15.9855 19.5 12C19.5 8.0145 15.9855 4.5 12 4.5ZM16.044 8.25L13.6725 10.6215C13.4775 10.8165 13.125 10.6845 13.125 10.3935V8.25H12.375V10.3935C12.375 10.6845 12.0225 10.8165 11.8275 10.6215L9.456 8.25H8.25V15.75H15.75V8.25H16.044Z"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05"
+              />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                 fill="#EA4335"
               />
             </svg>
-            Google
+            Sign in with Google
           </Button>
         </div>
         <div className="relative">
@@ -41,9 +59,7 @@ export function CreateAccount() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
-              Or Continue With
-            </span>
+            <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
           </div>
         </div>
       </div>
@@ -53,5 +69,9 @@ export function CreateAccount() {
       </div>
       <Button className="w-full">Create Account</Button>
     </div>
-  );
+  )
+}
+
+function usetoast() {
+  throw new Error("Function not implemented.")
 }

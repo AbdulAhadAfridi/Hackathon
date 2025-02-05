@@ -1,5 +1,4 @@
 
-import React from 'react'
 import HeroSection from './components/hero'
 import TopPicksSection from './components/toppicsection'
 import ProductCard from './components/prodcard'
@@ -19,6 +18,7 @@ const Home = () => {
       <Newarrival/>
       <BlogSection/>
       <InstagramSection/>
+
       
     </div>
   )

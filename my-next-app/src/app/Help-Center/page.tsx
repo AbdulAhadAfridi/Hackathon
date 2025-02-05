@@ -1,8 +1,10 @@
 "use client";
 
+import { FaPhone } from "react-icons/fa";
 import Chatbot from "../components/chat-bot";
 import FAQ from "../components/faq";
 import { useState } from "react";
+import Link from "next/link"; // Import Link
 
 const HelpCenter = () => {
   const [search, setSearch] = useState("");
@@ -10,57 +12,65 @@ const HelpCenter = () => {
   const [visibleCategories, setVisibleCategories] = useState<{
     [key: string]: boolean;
   }>({});
+
   const categorizedFaqs: {
-    [key: string]: { question: string; answer: string }[];
+    [key: string]: { question: string; answer: string }[]; 
   } = {
-    Booking: [
+    Products: [
       {
-        question: "Can I book a car in advance?",
+        question: "What types of furniture do you offer?",
         answer:
-          "Yes, you can book a car in advance through our website or mobile app.",
+          "We specialize in chairs, tables, beds, and sofas designed to suit every style and need.",
       },
       {
-        question: "What are the requirements to rent a car?",
+        question: "Are the products customizable?",
         answer:
-          "To rent a car, you must be at least 21 years old (age may vary by location), have a valid driver's license, and provide a credit card for payment.",
+          "Yes, many of our furniture pieces are customizable. You can choose sizes, colors, and materials.",
       },
       {
-        question: "Can I return the car to a different location?",
+        question: "Do you sell outdoor furniture?",
         answer:
-          "Yes, we offer one-way rentals. Please select the 'return to a different location' option while booking. Additional fees may apply.",
-      },
-      {
-        question: "Are there mileage limits for the rental cars?",
-        answer:
-          "Most of our rentals come with unlimited mileage. However, some vehicle categories may have mileage restrictions. Check your rental terms for more details.",
+          "Currently, our collection focuses on indoor furniture such as chairs, tables, beds, and sofas.",
       },
     ],
     Payments: [
       {
         question: "What payment methods are accepted?",
-        answer: "We accept all major credit cards and some debit cards.",
+        answer: "We accept major credit cards, debit cards, and digital wallets like PayPal and Stripe.",
+      },
+      {
+        question: "Is financing available?",
+        answer:
+          "Yes, we offer financing options through our partners. Please check the payment section during checkout.",
+      },
+    ],
+    Shipping: [
+      {
+        question: "What are the delivery options?",
+        answer:
+          "We offer standard and express delivery options. Delivery times vary by location and product availability.",
+      },
+      {
+        question: "Do you provide assembly services?",
+        answer:
+          "Yes, professional assembly services are available for an additional fee during checkout.",
       },
     ],
     Policies: [
       {
-        question: "What is the cancellation policy?",
+        question: "What is your return policy?",
         answer:
-          "You can cancel up to 24 hours before the pickup time for a full refund.",
+          "You can return furniture within 30 days of delivery. The item must be in its original condition.",
       },
       {
-        question: "Do you offer insurance for rental cars?",
+        question: "Do you offer a warranty?",
         answer:
-          "Yes, we offer various insurance packages to cover damages, theft, and personal liability. You can choose a package during booking or at the pickup location.",
-      },
-      {
-        question: "Can I add an additional driver to my rental?",
-        answer:
-          "Yes, you can add additional drivers to your rental. They must meet the rental requirements and may incur an extra fee.",
+          "Yes, all our furniture comes with a limited warranty. The duration varies by product category.",
       },
     ],
   };
 
-  const handleFeedback = (isPositive: any) => {
+  const handleFeedback = (isPositive: unknown) => {
     alert(
       isPositive ? "Thank you for your feedback!" : "We're sorry to hear that."
     );
@@ -86,19 +96,15 @@ const HelpCenter = () => {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 ${
-        darkMode
-          ? "bg-gray-900 text-gray-100"
-          : "bg-gradient-to-br from-gray-100 to-gray-200"
-      } p-6`}
+      className={`min-h-screen transition-colors duration-300 ${darkMode ? "bg-gray-500 text-white" : "bg-gray-200 text-black"} p-6`}
     >
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-black rounded-lg shadow-lg p-8">
         {/* Breadcrumb */}
         <div className="mb-6">
           <nav className="text-sm text-gray-500 dark:text-gray-400">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
-            </a>{" "}
+            </Link>{" "}
             /{" "}
             <span className="text-gray-700 dark:text-gray-200">
               Help Center
@@ -110,13 +116,13 @@ const HelpCenter = () => {
         <div className="flex justify-end mb-4">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md focus:outline-none"
+            className="bg-[#FBEBB5] text-black dark:bg-white dark:text-black px-4 py-2 rounded-lg shadow-md focus:outline-none"
           >
             Toggle {darkMode ? "Light" : "Dark"} Mode
           </button>
         </div>
 
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+        <h1 className="text-4xl font-bold text-black dark:text-white mb-6">
           Help Center
         </h1>
         <input
@@ -124,7 +130,7 @@ const HelpCenter = () => {
           placeholder="Search for a question..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full mb-6 p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full mb-6 p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FBEBB5]"
         />
         {Object.keys(filteredFaqs).length > 0 ? (
           Object.entries(filteredFaqs).map(([category, faqs]) => (
@@ -136,7 +142,7 @@ const HelpCenter = () => {
                     [category]: !prev[category],
                   }))
                 }
-                className="cursor-pointer text-xl font-semibold text-gray-800 dark:text-gray-200"
+                className="cursor-pointer text-xl font-semibold text-black dark:text-white"
               >
                 {category}
                 {visibleCategories[category] ? (
@@ -163,23 +169,24 @@ const HelpCenter = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-10 bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-inner text-center">
-          <p className="text-lg font-medium text-gray-700 dark:text-gray-200 mb-4">
+        <div className="mt-10 bg-[#FBEBB5] dark:bg-gray-700 p-6 rounded-lg shadow-inner text-center">
+          <p className="text-lg font-medium text-black dark:text-white mb-4">
             Still have questions?
           </p>
           <div className="flex justify-center items-center space-x-4">
             <a
               href="tel:+123456789"
-              className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800"
+              className="flex items-center text-black dark:text-white hover:underline"
             >
-              <span className="mr-2">📞</span> Call Support
+              <FaPhone className="text-[30px]" />
+              Call Support
             </a>
-            <a
-              href="/contact"
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-4 rounded-lg shadow hover:shadow-lg transition-all"
+            <Link
+              href="/Contact"
+              className="bg-black text-white dark:bg-[#FBEBB5] dark:text-black py-2 px-4 rounded-lg shadow hover:shadow-lg transition-all"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -189,7 +196,7 @@ const HelpCenter = () => {
         </div>
 
         {/* Background Animation */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse opacity-30" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-[#FBEBB5] to-white animate-pulse opacity-20" />
       </div>
     </div>
   );

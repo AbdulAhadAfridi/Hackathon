@@ -1,162 +1,169 @@
+
+
+
+
+
 "use client";
-import React from "react";
-import { AiOutlineExclamation, AiOutlineShoppingCart } from "react-icons/ai";
+
 import { IoIosHeartEmpty } from "react-icons/io";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
-import { FaRegUser } from "react-icons/fa";
-import Image from "next/image";
-import { Menu } from "lucide-react";
+import {  FaQuestion, FaRegUser } from "react-icons/fa";
+import { Menu } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
+import { getCartItems } from "@/app/actions/action";
+import Notification from "./notificationComponent";
 import SidebarWithSearch from "./SidebarWithSearch";
-import { useSelector } from "react-redux";
+import Image from "next/image";
+import { ThemeToggle } from "./theme-toggle";
 
 const Header = () => {
-  const cart =  useSelector((state:any)=>state.cart)
+  const [cartCount, setCartCount] = useState(0);
+  const [showNotification, setShowNotification] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const cartItems = getCartItems();
+    const totalQuantity = cartItems.reduce((acc, item) => acc + item.stockLevel, 0);
+    setCartCount(totalQuantity);
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleNotificationIconClick = () => {
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000);
+  };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <header className="bg-white w-full mx-auto max-w-screen-2xl">
-      <div className="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 py-4 lg:py-6">
-        {/* Hamburger Menu for Small Screens */}
-        <Sheet>
-          <SheetTrigger className="lg:hidden">
-            <Menu className="text-black cursor-pointer" size={30} />
-          </SheetTrigger>
-          <SheetContent
-            className="bg-white text-black max-w-full h-full sm:max-w-xs sm:rounded-t-lg overflow-y-auto"
-          >
-            <SheetHeader>
-              <h2 className="text-2xl font-bold py-6  ml-[-140]">Menu</h2>
-              <ul className="space-y-4 text-lg font-medium pl-4 mt-4 gap-y-4 sm:mr-32 mr-0 text-left items-center">
-                <li>
-                  <Link href="/" className="hover:text-yellow-700">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/Shop" className="hover:text-yellow-700">
-                    Shop
-                  </Link>
-                </li>
-                
-                <li>
-                  <Link href="/Cart" className="hover:text-yellow-700">
-                    Cart
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/Blogs" className="hover:text-yellow-700">
-                    Blog
-                  </Link>
-                </li>
-                
-                <li>
-                  <Link href="/Contact" className="hover:text-yellow-700">
-                    Contact
-                  </Link>
-                </li>
-                
-              </ul>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
-
-        {/* Navigation Links for Larger Screens */}
-        <nav className="hidden lg:flex space-x-6 xl:space-x-10 text-base lg:text-lg font-semibold lg:ml-56">
-          <Link href="/" className="hover:text-black">
-            Home
-          </Link>
-          <Link href="/Shop" className="hover:text-black">
-            Shop
-          </Link>
-          <Link href="/Blogs" className="hover:text-black">
-            Blogs
-          </Link>
-          <Link href="/Contact" className="hover:text-black">
-            Contact
-          </Link>
-        </nav>
-
-        {/* Action Icons */}
-        <div className="flex items-center gap-4 lg:gap-6 mr-8">
-          <div className="flex items-center gap-2">
-            <Link href="/My-account">
-              <FaRegUser size={24} className="cursor-pointer hover:text-black mr-[-16]" />
-            </Link>
-            <AiOutlineExclamation size={24} className="cursor-pointer hover:text-black " />
-          </div>         
-        <SidebarWithSearch/>
-        <Link href="/wishlist">
-          <IoIosHeartEmpty size={24} className="cursor-pointer hover:text-black" />
-         </Link>
-          {/* Shopping Cart */}
+    <header className="sticky top-0 z-50 bg-white w-full mx-auto max-w-screen-2xl border-b">
+      <div className="flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-3 lg:py-4">
+        {/* Left Section - Logo and Menu */}
+        <div className="flex items-center gap-3">
           <Sheet>
-            <SheetTrigger>
-            <Link href={"/Cart"} className="relative hidden lg:block"><AiOutlineShoppingCart className="text-4xl  "/>
-             {cart.length > 0 && (
-                <span className="absolute top-[-5px] bg-red-400  rounded-full text-white w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">{cart.length}</span>
-             )
-             }
-            </Link>
+            <SheetTrigger className="lg:hidden">
+              <Menu className="h-6 w-6" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm bg-white">
-              <SheetHeader>
-                <div className="p-4 border-b border-gray-200">
-                  <h2 className="text-lg font-bold text-black">Shopping Cart</h2>
-                </div>
+            <SheetContent side="left" className="w-[300px] sm:w-[400px] lg:hidden bg-white">
+              <SheetHeader className="border-b pb-4 mb-4">
+                <Image
+                  src="/logoname.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="w-24 h-16"
+                />
               </SheetHeader>
-
-              {/* Cart Items */}
-              <div className="p-4">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-[#FBEBB5] rounded-lg flex items-center justify-center">
-                    <Image
-                      src="/sofa.png"
-                      alt="Product Thumbnail"
-                      width={64}
-                      height={64}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-sm font-medium text-gray-800">Asgaard Sofa</h3>
-                    <p className="text-xs text-black">
-                      1 x <span className="text-[#B88E2F]">Rs. 250,000.00</span>
-                    </p>
-                  </div>
-                  <button className="w-6 h-6 bg-gray-400 text-white text-xs rounded-full">
-                    X
-                  </button>
-                </div>
-                <div className="border-t border-gray-200 mt-4"></div>
-              </div>
-
-              {/* Subtotal Section */}
-              <div className="p-4">
-                <div className="flex justify-between text-sm font-medium">
-                  <span>Subtotal</span>
-                  <span className="text-[#B88E2F] font-bold">Rs. 250,000.00</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="p-4 grid grid-cols-2 gap-4">
-                <Link
-                  href="/Cart"
-                  className="py-2 text-center border border-black text-sm text-black rounded-full hover:bg-black hover:text-white"
-                >
-                  View Cart
-                </Link>
-                <Link
-                  href="/Checkout"
-                  className="py-2 text-center border border-black text-sm text-black rounded-full hover:bg-black hover:text-white"
-                >
-                  Checkout
-                </Link>
-              </div>
+              <nav className="space-y-4 ">
+                {['Home', 'Shop', 'Blogs', 'Contact'].map((item) => (
+                  <Link
+                    key={item}
+                    href={`/${item === 'Home' ? '' : item}`}
+                    className="flex items-center py-2 text-lg font-medium hover:text-primary transition-colors"
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </nav>
             </SheetContent>
           </Sheet>
+
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logoname.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="w-24 h-16 sm:w-28 sm:h-18"
+            />
+          </Link>
+        </div>
+
+        {/* Center Section - Navigation */}
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          {['Home', 'Shop', 'Blogs', 'Contact'].map((item) => (
+            <Link
+              key={item}
+              href={`/${item === 'Home' ? '' : item}`}
+              className="text-base xl:text-lg font-medium hover:text-primary transition-colors"
+            >
+              {item}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right Section - Actions */}
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+          {/* Search - Hidden on small screens */}
+          <div className="hidden sm:block">
+            <SidebarWithSearch />
+          </div>
+
+          {/* Wishlist - Hidden on very small screens */}
+          <Link href="/wishlist" className="">
+            <IoIosHeartEmpty className="w-6 h-6 hover:text-primary transition-colors" />
+          </Link>
+
+          {/* Cart */}
+          <Link href="/Cart" className="relative">
+            <AiOutlineShoppingCart className="w-6 h-6 hover:text-primary transition-colors" />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+
+          {/* Notification - Hidden on small screens */}
+          <button
+            onClick={handleNotificationIconClick}
+            className="hidden md:block hover:text-primary transition-colors"
+          >
+            <AiOutlineBell className="w-6 h-6" />
+          </button>
+
+          {/* Theme Toggle */}
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
+
+          {/* Help Center - Hidden on smaller screens */}
+          <Link
+            href="/Help-Center"
+            className="hidden lg:flex items-center gap-1 text-sm hover:text-primary transition-colors"
+          >
+            <FaQuestion className="w-4 h-4" />
+            <span>Help Center</span>
+          </Link>
+
+          {/* User Profile */}
+          <Link href="/Login">
+            <FaRegUser className="w-6 h-6 hover:text-primary transition-colors" />
+          </Link>
         </div>
       </div>
+
+      {/* Mobile Search Bar */}
+      <div className="sm:hidden px-3 pb-3">
+        <SidebarWithSearch />
+      </div>
+
+      {/* Notification Component */}
+      {showNotification && (
+        <Notification
+          message="No New Notifications!"
+          type="info"
+          onClose={() => setShowNotification(false)}
+          id=""
+        />
+      )}
     </header>
   );
 };
