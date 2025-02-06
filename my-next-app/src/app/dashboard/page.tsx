@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 async function getDashboardData() {
-  const res = await fetch("http://localhost:3000/api/dashboard", {
+  const res = await fetch("https://hackathon-neon-eight.vercel.app/dashboard", {
     cache: "no-store",
   });
   if (!res.ok) {
